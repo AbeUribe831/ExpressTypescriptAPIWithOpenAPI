@@ -1,0 +1,7 @@
+type: object
+properties:
+  redisComment:
+    type: string
+  id:
+    type: integer
+    minimum: 1

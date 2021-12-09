@@ -1,0 +1,18 @@
+parameters:
+  - $ref: "../parameters/intId.yaml"
+get:
+  summary: get single post from an example logicloud api responses
+  responses:
+    "200":
+      description: "OK"
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Post.yaml"
+    "400":
+      description: general errors
+      content:
+        text/html:
+          schema:
+            $ref: "../schemas/GeneralErrorMessage.yaml"
+          example: "no post not found with id"

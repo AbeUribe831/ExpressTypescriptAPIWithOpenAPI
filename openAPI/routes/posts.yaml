@@ -1,0 +1,16 @@
+get:
+  summary: get posts from an example logicloud api
+  responses:
+    "200":
+      description: "OK"
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/ArrPosts.yaml"
+    "400":
+      description: "Some error from getting data"
+      content:
+        text/html:
+          schema: 
+            $ref: "../schemas/GeneralErrorMessage.yaml"
+          example: "Timeout error"

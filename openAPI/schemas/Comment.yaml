@@ -1,0 +1,20 @@
+required:
+  - postId
+  - id
+  - email
+  - body
+type: object
+properties:
+  postId: 
+    type: integer
+    minimum: 1
+  id: 
+    type: integer
+    minimum: 1
+  name:
+    type: string
+  email:
+    type: string
+    format: email
+  body:
+    type: string

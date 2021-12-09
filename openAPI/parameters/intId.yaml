@@ -1,0 +1,8 @@
+description: integer based id > 0
+name: id
+in: path
+required: true
+schemas:
+  type: integer
+  minimum: 1
+  example: 1

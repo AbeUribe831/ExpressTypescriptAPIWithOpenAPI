@@ -1,0 +1,39 @@
+parameters:
+  - $ref: "../parameters/intId.yaml"
+get:
+  summary: get single comment using id from mysql 
+  responses:
+    "200":
+      description: "OK"
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/SQLResponseComment.yaml"
+    "400":
+      description: "Some error from getting data"
+      content:
+        text/html:
+          schema: 
+            $ref: "../schemas/GeneralErrorMessage.yaml"
+          example: "Timeout error"
+post:
+  summary: post single comment using id in mysql
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/SQLRequestComment.yaml"
+  responses:
+    "200":
+      description: "OK"
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/SQLResponseComment.yaml"
+    "4XX":
+      description: "other errors"
+      content:
+        text/html:
+          schema:
+            $ref: "../schemas/GeneralErrorMessage.yaml"

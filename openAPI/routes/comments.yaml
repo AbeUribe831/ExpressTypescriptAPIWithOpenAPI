@@ -1,0 +1,16 @@
+get:
+  summary: get all comments from api 
+  responses:
+    "200":
+      description: "OK"
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/ArrComments.yaml"
+    "400":
+      description: "general errors"
+      content:
+        text/html:
+          schema:
+            $ref: "../schemas/GeneralErrorMessage.yaml"
+          example: "no post not found with id"

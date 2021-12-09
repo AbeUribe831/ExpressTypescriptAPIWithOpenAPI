@@ -1,0 +1,50 @@
+parameters:
+  description: string based key
+  name: key 
+  in: path
+  required: true
+  schemas:
+    type: string 
+get:
+  summary: get key-value 
+  responses:
+    "200":
+      description: "OK"
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/RedisCommentSchema.yaml"
+    "400":
+      description: "expired or key doesn't exit"
+      content:
+        text/html:
+          schema:
+            $ref: "../schemas/GeneralErrorMessage.yaml"
+    "4XX":
+      description: "other errors"
+      content:
+        text/html:
+          schema:
+            $ref: "../schemas/GeneralErrorMessage.yaml"
+post:
+  summary: set or update existing key-value in redis
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/RedisCommentSchema.yaml"
+  responses:
+    "200":
+      description: "OK"
+      content:
+        text/html:
+          schema: 
+            type: string
+            example: "OK"
+    "4XX":
+      description: "other errors"
+      content:
+        text/html:
+          schema:
+            $ref: "../schemas/GeneralErrorMessage.yaml"
