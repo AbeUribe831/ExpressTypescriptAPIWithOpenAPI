@@ -1,5 +1,7 @@
 get:
   summary: get all comments from api 
+  operationId: getAllComments
+  x-exegesis-controller: commentsControllers
   responses:
     "200":
       description: "OK"

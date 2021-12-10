@@ -2,6 +2,8 @@ parameters:
   - $ref: "../parameters/intId.yaml"
 get:
   summary: get single post from an example logicloud api responses
+  operationId: getSinglePost
+  x-exegesis-controller: postsControllers
   responses:
     "200":
       description: "OK"

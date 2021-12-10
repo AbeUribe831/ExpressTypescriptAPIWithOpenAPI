@@ -1,14 +1,14 @@
 get:
-  summary: get posts from an example logicloud api
-  operationId: getAllPosts
-  x-exegesis-controller: postsControllers
+  summary: get comments from mysql 
+  operationId: getAllComments
+  x-exegesis-controller: mySQLControllers
   responses:
     "200":
       description: "OK"
       content:
-        application/json:
+        text/html:
           schema:
-            $ref: "../schemas/ArrPosts.yaml"
+            $ref: "../schemas/GeneralErrorMessage.yaml"
     "400":
       description: "Some error from getting data"
       content:

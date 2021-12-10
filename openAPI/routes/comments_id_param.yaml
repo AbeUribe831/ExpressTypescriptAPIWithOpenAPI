@@ -2,6 +2,8 @@ parameters:
   - $ref: "../parameters/intId.yaml"
 get:
   summary: get single comment 
+  operationId: getSingleComment
+  x-exegesis-controller: commentsControllers
   responses:
     "200":
       description: "OK"

@@ -1,9 +1,9 @@
-required:
-  - id
-  - post_id
-  - email
-  - body
 type: object
+required:
+- id
+- post_id
+- email
+- body
 properties:
   id:
     type: integer
@@ -15,6 +15,5 @@ properties:
     type: string
   email:
     type: string
-    format: email
   body:
     type: string

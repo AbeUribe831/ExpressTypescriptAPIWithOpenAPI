@@ -1,6 +1,9 @@
 type: object
+required:
+  - redis_comment
+  - id
 properties:
-  redisComment:
+  redis_comment:
     type: string
   id:
     type: integer

@@ -1,0 +1,22 @@
+openapi: 3.0.1
+info: 
+  title: typescript
+  description: |
+    This is an supposed to be an api originally written in typescript.
+    it has resouces specifically for learning tools like redis and mysql in nodejs typescript.
+  version: 0.5.0
+paths:
+  /sql-comments:
+    $ref: "./routes/sql-comments.yaml"
+  /sql-comments/{id}:
+    $ref: "./routes/sql-comments_id_params.yaml"
+  /redis/{key}:
+    $ref: "./routes/redis.yaml"
+  /hello:
+    get:
+      summary: get a simple hello message
+      operationId: hello
+      x-exegesis-controller: simpleController
+      responses:
+        "200":
+          description: OK

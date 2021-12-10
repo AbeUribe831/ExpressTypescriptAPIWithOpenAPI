@@ -1,33 +1,37 @@
 parameters:
-  description: string based key
+- in: path
   name: key 
-  in: path
+  description: string based key
   required: true
-  schemas:
+  schema:
     type: string 
 get:
   summary: get key-value 
+  operationId: getValueFromKey
+  x-exegesis-controller: redisCommentsControllers
   responses:
     "200":
-      description: "OK"
+      description: OK
       content:
         application/json:
           schema:
             $ref: "../schemas/RedisCommentSchema.yaml"
     "400":
-      description: "expired or key doesn't exit"
+      description: expired or key doesn't exit
       content:
-        text/html:
+        text/plain:
           schema:
-            $ref: "../schemas/GeneralErrorMessage.yaml"
+            type: string 
     "4XX":
       description: "other errors"
       content:
-        text/html:
+        text/plain:
           schema:
-            $ref: "../schemas/GeneralErrorMessage.yaml"
+            type: string
 post:
   summary: set or update existing key-value in redis
+  operationId: setValueWithKey
+  x-exegesis-controller: redisCommentsControllers
   requestBody:
     required: true
     content:
@@ -35,16 +39,21 @@ post:
         schema:
           $ref: "../schemas/RedisCommentSchema.yaml"
   responses:
-    "200":
-      description: "OK"
+    200:
+      description: OK
       content:
-        text/html:
+        application/json:
           schema: 
-            type: string
+            type: object 
+            required: 
+              - message
+            properties:
+              message:
+                type: string
             example: "OK"
-    "4XX":
-      description: "other errors"
+    400:
+      description: other errors
       content:
-        text/html:
+        text/plain:
           schema:
-            $ref: "../schemas/GeneralErrorMessage.yaml"
+            type: string

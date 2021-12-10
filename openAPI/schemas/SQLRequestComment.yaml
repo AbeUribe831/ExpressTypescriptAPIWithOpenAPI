@@ -11,6 +11,5 @@ properties:
     type: string
   email:
     type: string
-    format: email
   body:
     type: string
