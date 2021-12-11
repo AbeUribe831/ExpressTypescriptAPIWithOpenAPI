@@ -21,5 +21,5 @@ export const postSingleSQLComment = (body: InsertComment) => {
   });
   return sequelize.query(
     `INSERT INTO Comments (${params}) VALUES (${values})`
-  ) as Promise<SQLComment[]>;
+  ) as Promise<number[]>;
 };

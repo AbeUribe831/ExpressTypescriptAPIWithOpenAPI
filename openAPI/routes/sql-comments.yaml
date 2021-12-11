@@ -33,7 +33,7 @@ post:
         application/json:
           schema:
             $ref: "../schemas/SQLResponseComment.yaml"
-    "4XX":
+    "400":
       description: "other errors"
       content:
         text/html:

@@ -1,5 +1,4 @@
 import { ExegesisContext } from "exegesis-express";
-//import { NextFunction, Request, Response } from "express";
 import { getRedisComment, setRedisComment } from "../services/redisCommentsServices";
 
 exports.getValueFromKey = async (context: ExegesisContext) => {

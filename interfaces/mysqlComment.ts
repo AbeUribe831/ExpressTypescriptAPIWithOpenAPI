@@ -1,7 +1,7 @@
 export interface SQLComment {
   id: number;
   postId: number;
-  name: string;
+  name?: string;
   email: string;
   body: string;
 }
