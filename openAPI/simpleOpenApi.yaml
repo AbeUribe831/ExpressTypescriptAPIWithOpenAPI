@@ -1,5 +1,5 @@
 openapi: 3.0.1
-info: 
+info:
   title: typescript
   description: |
     This is an supposed to be an api originally written in typescript.

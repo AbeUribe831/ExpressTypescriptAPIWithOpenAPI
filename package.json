@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon ./server.ts",
     "start": "nodemon ./dist/server.js",
-    "test": "env TS_NODE_PROJECT=\"tsconfig.json\" nyc mocha --require ts-node/register ./test/*"
+    "test": "env TS_NODE_PROJECT=\"tsconfig.json\" nyc mocha --require ts-node/register ./test/*",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -26,14 +27,26 @@
     "@types/ioredis": "^4.28.3",
     "@types/mocha": "^9.0.0",
     "@types/sinon": "^10.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
     "chai": "^4.3.4",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
     "mocha": "^9.1.3",
     "nodemon": "^2.0.15",
     "nyc": "^15.1.0",
+    "prettier": "^2.5.1",
     "sinon": "^12.0.1",
     "ts-auto-mock": "^3.5.0",
-    "ts-mockito": "^2.6.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.3"
+  },
+  "lint-staged": {
+    "**/*": [
+      "eslint --fix .",
+      "prettier --write ."
+    ]
   }
 }

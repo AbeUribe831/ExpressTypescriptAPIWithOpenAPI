@@ -13,6 +13,6 @@ get:
       description: "Some error from getting data"
       content:
         text/html:
-          schema: 
+          schema:
             $ref: "../schemas/GeneralErrorMessage.yaml"
           example: "Timeout error"

@@ -1,9 +1,9 @@
 type: object
 required:
-- id
-- post_id
-- email
-- body
+  - id
+  - post_id
+  - email
+  - body
 properties:
   id:
     type: integer

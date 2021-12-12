@@ -1,5 +1,5 @@
 openapi: 3.0.1
-info: 
+info:
   title: typescript
   description: |
     This is an supposed to be an api originally written in typescript.
@@ -9,9 +9,9 @@ paths:
   /posts:
     - $ref: "./routes/posts.yaml"
   /posts/{id}:
-    - $ref: "./routes/posts_id_param.yaml" 
+    - $ref: "./routes/posts_id_param.yaml"
   # api from https://jsonplaceholder.typicode.com/comments
-  /comments:  
+  /comments:
     - $ref: "./routes/comments.yaml"
   /comments/{id}:
     - $ref: "./routes/comments_id_param.yaml"

@@ -1,7 +1,7 @@
 parameters:
   - $ref: "../parameters/intId.yaml"
 get:
-  summary: get single comment using id from mysql 
+  summary: get single comment using id from mysql
   operationId: getSingleComment
   x-exegesis-controller: mySQLControllers
   responses:
@@ -15,7 +15,7 @@ get:
       description: "Some error from getting data"
       content:
         application/json:
-          schema: 
+          schema:
             type: object
             required:
               - message

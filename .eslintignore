@@ -1,0 +1,11 @@
+build/
+coverage/
+.nyc_output/
+.vscode/
+node_modules/
+Dockerfile
+.husky/*
+.gitignore
+.prettierignore
+.eslintignore
+openAPI/

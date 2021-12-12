@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { getAllData, getSingleData } from "../services/commentServices";
-import { ExegesisContext } from "exegesis"
+import { ExegesisContext } from "exegesis";
 /*
 interface pathParams {
   id: string;
@@ -21,15 +21,13 @@ export const getAllComments = async (
 };
 */
 exports.getAllComments = function getAllComments(context: ExegesisContext) {
-    console.log('get to here')
-    getAllData()
-    .then(data => {
-      return context.res
-        .status(200)
-        .json({ data })
+  console.log("get to here");
+  getAllData()
+    .then((data) => {
+      return context.res.status(200).json({ data });
     })
     .catch((err) => {
-      return context.res.status(400).body({error: err})
+      return context.res.status(400).body({ error: err });
     });
 };
 // do I need Request<pathParams>?
@@ -46,7 +44,7 @@ export const getSingleComment = async (
       throw new Error("No comment found");
     res.status(200).json({ comment: foundComment });
   } catch (e) {
-    console.error(e)
+    console.error(e);
     return next(e);
   }
 };

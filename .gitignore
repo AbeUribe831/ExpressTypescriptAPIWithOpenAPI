@@ -1,2 +1,5 @@
 /openAPI/_build/
 /node_modules
+.nyc_output
+.vscode
+build

@@ -1,12 +1,12 @@
 parameters:
-- in: path
-  name: key 
-  description: string based key
-  required: true
-  schema:
-    type: string 
+  - in: path
+    name: key
+    description: string based key
+    required: true
+    schema:
+      type: string
 get:
-  summary: get key-value 
+  summary: get key-value
   operationId: getValueFromKey
   x-exegesis-controller: redisCommentsControllers
   responses:
@@ -21,7 +21,7 @@ get:
       content:
         text/plain:
           schema:
-            type: string 
+            type: string
     "4XX":
       description: "other errors"
       content:
@@ -43,9 +43,9 @@ post:
       description: OK
       content:
         application/json:
-          schema: 
-            type: object 
-            required: 
+          schema:
+            type: object
+            required:
               - message
             properties:
               message:

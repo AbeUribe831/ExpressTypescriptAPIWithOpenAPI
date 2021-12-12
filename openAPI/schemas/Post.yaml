@@ -1,8 +1,8 @@
 required:
   - userId
   - id
-  - title 
-  - body 
+  - title
+  - body
 type: object
 properties:
   userId:

@@ -1,5 +1,5 @@
 get:
-  summary: get comments from mysql 
+  summary: get comments from mysql
   operationId: getAllComments
   x-exegesis-controller: mySQLControllers
   responses:
@@ -13,7 +13,7 @@ get:
       description: Some error from getting data
       content:
         text/html:
-          schema: 
+          schema:
             $ref: "../schemas/GeneralErrorMessage.yaml"
           example: "Timeout error"
 post:

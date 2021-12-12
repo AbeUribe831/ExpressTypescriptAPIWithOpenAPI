@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build/
+coverage/
+.nyc_output/
+.vscode/
+node_modules/
+Dockerfile
+.husky/
+.prettierignore
+.eslintignore
+.gitignore

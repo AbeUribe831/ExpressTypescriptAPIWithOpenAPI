@@ -1,7 +1,7 @@
 parameters:
   - $ref: "../parameters/intId.yaml"
 get:
-  summary: get single comment 
+  summary: get single comment
   operationId: getSingleComment
   x-exegesis-controller: commentsControllers
   responses:
@@ -17,4 +17,4 @@ get:
         text/html:
           schema:
             $ref: "../schemas/GeneralErrorMessage.yaml"
-          example: "no comment found with id" 
+          example: "no comment found with id"
