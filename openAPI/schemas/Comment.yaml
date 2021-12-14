@@ -1,9 +1,9 @@
+type: object
 required:
   - postId
   - id
   - email
   - body
-type: object
 properties:
   postId:
     type: integer

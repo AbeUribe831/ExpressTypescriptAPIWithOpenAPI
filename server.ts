@@ -1,3 +1,4 @@
+require("newrelic");
 import express from "express";
 import * as exegesisExpress from "exegesis-express";
 import path from "path";
@@ -15,7 +16,7 @@ async function createServer() {
 
   // create exegesis middleware compatible with express
   const exegesisMiddleware = await exegesisExpress.middleware(
-    path.resolve(__dirname, "./openAPI/simpleOpenApi.yaml"),
+    path.resolve(__dirname, "./openAPI/openapi.yaml"),
     options
   );
 

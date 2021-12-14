@@ -1,17 +1,14 @@
+import { ExegesisContext } from "exegesis-express";
 import { NextFunction, Request, Response } from "express";
 import { getAllData, getSingleData } from "../services/postServices";
 // import { getAllData, getSingleData } from "../services/posts";
 
-export const getAllPosts = async (
-  _req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const getAllPosts = async (context: ExegesisContext) => {
   try {
     const posts = await getAllData();
-    return res.status(200).json({ posts });
+    return context.res.status(200).json({ posts });
   } catch (e) {
-    return next(e);
+    throw context.makeError(400, (e as Error).message);
   }
 };
 

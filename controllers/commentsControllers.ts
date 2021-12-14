@@ -1,4 +1,3 @@
-import { NextFunction, Request, Response } from "express";
 import { getAllData, getSingleData } from "../services/commentServices";
 import { ExegesisContext } from "exegesis";
 /*
@@ -20,31 +19,22 @@ export const getAllComments = async (
   }
 };
 */
-exports.getAllComments = function getAllComments(context: ExegesisContext) {
-  console.log("get to here");
-  getAllData()
-    .then((data) => {
-      return context.res.status(200).json({ data });
-    })
-    .catch((err) => {
-      return context.res.status(400).body({ error: err });
-    });
-};
-// do I need Request<pathParams>?
-export const getSingleComment = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const getAllComments = async (context: ExegesisContext) => {
   try {
-    const foundComment = await getSingleData(req.params.id);
+    const data = await getAllData();
+    return { data };
+  } catch (error) {
+    throw context.makeError(400, (error as Error).message);
+  }
+};
 
-    if (!foundComment)
-      //return next()
-      throw new Error("No comment found");
-    res.status(200).json({ comment: foundComment });
+// do I need Request<pathParams>?
+export const getSingleComment = async (context: ExegesisContext) => {
+  try {
+    const foundComment = await getSingleData(context.params.path.id);
+    if (!foundComment) throw new Error("No comment found");
+    context.res.status(200).json({ comment: foundComment });
   } catch (e) {
-    console.error(e);
-    return next(e);
+    throw context.makeError(400, (e as Error).message);
   }
 };

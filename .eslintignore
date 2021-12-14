@@ -9,3 +9,4 @@ Dockerfile
 .prettierignore
 .eslintignore
 openAPI/
+newrelic*
