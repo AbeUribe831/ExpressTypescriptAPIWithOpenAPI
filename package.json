@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "dev": "nodemon ./server.ts",
-    "start": "nodemon ./dist/server.js",
+    "start": "nodemon ./dist/server.ts",
     "test": "env TS_NODE_PROJECT=\"tsconfig.json\" nyc mocha --require ts-node/register ./test/*",
     "prepare": "husky install"
   },

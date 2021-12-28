@@ -10,3 +10,4 @@ Dockerfile
 .eslintignore
 openAPI/
 newrelic*
+.dccache
